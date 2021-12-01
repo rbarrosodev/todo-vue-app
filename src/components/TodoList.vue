@@ -46,7 +46,7 @@
         }
 
         async loadTodos(){
-            const response = await this.axios.get(`http://localhost:3000/todos`);
+            const response = await this.axios.get(`http://8073-201-19-121-179.ngrok.io/todos`);
             this.todos = response.data;
         }
 
@@ -54,7 +54,7 @@
             debugger
             console.log("Todo", todo);
             
-            await this.axios.post(`http://localhost:3000/todos`, {
+            await this.axios.post(`http://8073-201-19-121-179.ngrok.io/todos`, {
                 title: todo.title,
                 completed: todo.completed
             });
@@ -69,7 +69,7 @@
 
         async updateTodo(todo: Todo){
             console.log("Todo", todo);
-            await this.axios.put(`http://localhost:3000/todos/${todo.id}`, {
+            await this.axios.put(`http://8073-201-19-121-179.ngrok.io/todos/${todo.id}`, {
                 id: todo.id,
                 title: todo.title,
                 completed: todo.completed
@@ -84,7 +84,7 @@
         }
 
         async handleDelete(todo: Todo){
-            await this.axios.delete(`http://localhost:3000/todos/${todo.id}`);
+            await this.axios.delete(`http://8073-201-19-121-179.ngrok.io/todos/${todo.id}`);
 
             ElMessage({
                 message: "Todo Deleted",
